@@ -1,0 +1,9 @@
+NAMESPACE=coolstore-micro-pipeline
+NAMESPACE_DEV=coolstore-micro-dev
+NAMESPACE_TEST=coolstore-micro-test
+NAMESPACE_UAT=coolstore-micro-uat
+HTTPD_APPLICATION_NAME=coolstore-micro
+HTTPD_APPLICATION_SOURCE_REPOSITORY_URL=https://github.com/mono2micro/coolstore-micro.git
+HTTPD_APPLICATION_SOURCE_REPOSITORY_REF=master
+HTTPD_APPLICATION_CONTEXT_DIR=website
+GITHUB_WEBHOOK_SECRET=`

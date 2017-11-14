@@ -1,0 +1,49 @@
+---
+
+openshift_cluster_content:
+- object: projectrequest
+  content:
+  - name: "coolstore-micro-pipeline"
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    params: "{{ inventory_dir }}/../templates/projectrequest/pipeline.params"
+    template_action: create
+  - name: "coolstore-mono"
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    params: "{{ inventory_dir }}/../templates/projectrequest/mono.params"
+    template_action: create
+  - name: "coolstore-micro-dev"
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    params: "{{ inventory_dir }}/../templates/projectrequest/dev.params"
+    template_action: create
+  - name: "infographic-micro-uat"
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    params: "{{ inventory_dir }}/../templates/projectrequest/uat.params"
+    template_action: create
+  - name: "infographic-micro-test"
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    params: "{{ inventory_dir }}/../templates/projectrequest/test.params"
+    template_action: create
+#- object: builds
+#  content:
+#  - name: "infographic-pipeline"
+#    template: "{{ inventory_dir }}/../templates/build/template-pipeline.yml"
+#    params: "{{ inventory_dir }}/../templates/build/pipeline.params"
+#    namespace: "infographic-pipeline"
+#  - name: "infographic-build"
+#    template: "{{ inventory_dir }}/../templates/build/template-build.yml"
+#    params: "{{ inventory_dir }}/../templates/build/build.params"
+#    namespace: "infographic-pipeline"
+#- object: deployments
+#  content:
+#  - name: "infographic-dev"
+#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
+#    params: "{{ inventory_dir }}/../templates/deploy/dev.params"
+#    namespace: "infographic-dev"
+#  - name: "infographic-uat"
+#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
+#    params: "{{ inventory_dir }}/../templates/deploy/uat.params"
+#    namespace: "infographic-uat"
+#  - name: "infographic-test"
+#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
+#    params: "{{ inventory_dir }}/../templates/deploy/test.params"
+#    namespace: "infographic-test"
