@@ -25,20 +25,20 @@ openshift_cluster_content:
     template_action: create
 #- object: builds
 #  content:
-#  - name: "infographic-pipeline"
+#  - name: "coolstore-micro-pipeline"
 #    template: "{{ inventory_dir }}/../templates/build/template-pipeline.yml"
 #    params: "{{ inventory_dir }}/../templates/build/pipeline.params"
-#    namespace: "infographic-pipeline"
-#  - name: "infographic-build"
+#    namespace: "coolstore-micro-pipeline"
+#  - name: "coolstore-micro-build"
 #    template: "{{ inventory_dir }}/../templates/build/template-build.yml"
 #    params: "{{ inventory_dir }}/../templates/build/build.params"
-#    namespace: "infographic-pipeline"
+#    namespace: "coolstore-micro-pipeline"
 #- object: deployments
 #  content:
-#  - name: "infographic-dev"
+#  - name: "coolstore-micro-dev"
 #    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
 #    params: "{{ inventory_dir }}/../templates/deploy/dev.params"
-#    namespace: "infographic-dev"
+#    namespace: "coolstore-micro-dev"
 #  - name: "infographic-uat"
 #    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
 #    params: "{{ inventory_dir }}/../templates/deploy/uat.params"
@@ -47,3 +47,21 @@ openshift_cluster_content:
 #    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
 #    params: "{{ inventory_dir }}/../templates/deploy/test.params"
 #    namespace: "infographic-test"
+- object: demo
+  content:
+  - name: coolstore-micro-dev
+    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
+    params: "{{ inventory_dir }}/../templates/emptyparams"
+    namespace: "coolstore-micro-dev"
+- object: demo
+  content:
+  - name: coolstore-micro-test
+    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
+    params: "{{ inventory_dir }}/../templates/emptyparams"
+    namespace: "coolstore-micro-test"
+- object: demo
+  content:
+  - name: coolstore-micro-uat
+    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
+    params: "{{ inventory_dir }}/../templates/emptyparams"
+    namespace: "coolstore-micro-uat"
