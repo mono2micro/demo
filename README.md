@@ -14,5 +14,6 @@ ansible-playbook -i demo/inventory casl-ansible/playbooks/openshift-cluster-seed
 
 ### Cleanup (TODO: make better)
 ```bash 
-for i in micro-pipeline micro-dev micro-test micro-uat; do oc delete -n coolstore-$i all --all; oc delete project coolstore-$i; done
+for i in micro-pipeline micro-dev micro-test micro-uat mono; do oc delete -n coolstore-$i all --all; oc delete project coolstore-$i; done
 ```
+Note: OpenShift continues to clean up after the delete commands complete. If you get an error when attempting to redeploy; you may need to wait a few more minutes for the cleanup to complete.
