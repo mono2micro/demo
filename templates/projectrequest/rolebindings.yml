@@ -1,0 +1,32 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  groupNames: null
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: null
+    name: admin
+  roleRef:
+    name: admin
+  subjects:
+  - kind: User
+    name: jedrington
+  - kind: User
+    name: murph
+  - kind: User
+    name: sigreen
+  - kind: User
+    name: dkramer
+  - kind: User
+    name: ghoelzer
+  - kind: User
+    name: mdanter
+  userNames:
+  - jedrington
+  - murph
+  - sigreen
+  - dkramer
+  - ghoelzer
+  - mdanter
+kind: List
+metadata: {}

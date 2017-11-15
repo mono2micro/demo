@@ -23,6 +23,28 @@ openshift_cluster_content:
     template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
     params: "{{ inventory_dir }}/../templates/projectrequest/test.params"
     template_action: create
+- object: rolebindings
+  content:
+  - name: "coolstore-micro-pipeline-rolebindings"
+    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+    file_action: apply
+    namespace: coolstore-micro-pipeline
+  - name: "coolstore-mono-rolebindings"
+    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+    file_action: apply
+    namespace: coolstore-mono
+  - name: "coolstore-micro-dev-rolebindings"
+    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+    file_action: apply
+    namespace: coolstore-micro-dev
+  - name: "coolstore-micro-uat-rolebindings"
+    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+    file_action: apply
+    namespace: coolstore-micro-uat
+  - name: "coolstore-micro-test-rolebindings"
+    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+    file_action: apply
+    namespace: coolstore-micro-test
 #- object: builds
 #  content:
 #  - name: "coolstore-micro-pipeline"

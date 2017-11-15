@@ -5,6 +5,9 @@ git clone https://github.com/redhat-cop/casl-ansible
 git clone https://github.com/mono2micro/demo
 ```
 
+### Pre-Demo Steps
+* Review/edit file templates/projectrequest/rolebindings.yml, make sure your username is listed, and optionally grant additional users access to the demo enviornment.
+
 ### Launch Demo
 
 ```bash
