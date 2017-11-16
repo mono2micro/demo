@@ -14,7 +14,7 @@ export class ProductService {
 
   constructor() {  }
 
-  updateProducts() 
+  updateProducts() {
     this._products.next(defaultProducts);
   }
 
