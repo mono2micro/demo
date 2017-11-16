@@ -1,0 +1,8 @@
+NAMESPACE=coolstore-micro-pipeline
+NAMESPACE_DEV=coolstore-micro-dev
+NAMESPACE_DEMO=coolstore-micro-demo
+APPLICATION_NAME=web-ui-2
+APPLICATION_SOURCE_REPOSITORY_URL=https://github.com/mono2micro/coolstore-micro.git
+APPLICATION_SOURCE_REPOSITORY_REF=1.1.x
+APPLICATION_CONTEXT_DIR=coolstore-ui-ng2
+GITHUB_WEBHOOK_SECRET=`
