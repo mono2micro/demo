@@ -15,6 +15,6 @@ export class ProductService {
   constructor() {  }
 
   updateProducts() {
-    this._products.next(defaultProducts);
+    this._products.next(defaultProducts as Product[]);
   }
-
+}
