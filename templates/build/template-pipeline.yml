@@ -18,15 +18,10 @@ parameters:
   displayName: Infographic Dev Namespace
   value: infographic-dev
   required: true
-- name: NAMESPACE_TEST
-  description: The Test Namespace
-  displayName: Infographic Test Namespace
-  value: infographic-test
-  required: true
-- name: NAMESPACE_UAT
-  description: The UAT Namespace
-  displayName: Infographic UAT Namespace
-  value: infographic-uat
+- name: NAMESPACE_DEMO
+  description: The DEMO Namespace
+  displayName: Infographic DEMO Namespace
+  value: infographic-demo
   required: true
 - name: HTTPD_APPLICATION_NAME
   description: The name for the HTTPD application.
@@ -84,10 +79,8 @@ objects:
           value: "${NAMESPACE}"
         - name: "NAMESPACE_DEV"
           value: "${NAMESPACE_DEV}"
-        - name: "NAMESPACE_TEST"
-          value: "${NAMESPACE_TEST}"
-        - name: "NAMESPACE_UAT"
-          value: "${NAMESPACE_UAT}"
+        - name: "NAMESPACE_DEMO"
+          value: "${NAMESPACE_DEMO}"
         jenkinsfilePath: Jenkinsfile
       type: JenkinsPipeline
     triggers:
