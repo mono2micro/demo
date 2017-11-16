@@ -66,7 +66,7 @@ openshift_cluster_content:
     params: "../templates/deploy/demo-web-ui.params"
     namespace: "coolstore-micro-demo"
   - name: "coolstore-micro-web-ui-2-dev"
-    template: "../templates/deploy/template.yml"
+    template: "../templates/deploy/template-web-ui-2.yml"
     params: "../templates/deploy/dev-web-ui-2.params"
     namespace: "coolstore-micro-dev"
   - name: "coolstore-micro-web-ui-2-demo"
