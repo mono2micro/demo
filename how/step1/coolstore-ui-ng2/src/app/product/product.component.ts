@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CardConfig} from 'patternfly-ng';
 import {Product} from './product';
+import {CartService} from '../cart/cart.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   config: CardConfig;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.config = {
@@ -22,8 +23,8 @@ export class ProductComponent implements OnInit {
     } as CardConfig;
   }
 
-  addToCart(quantity: number){
-
+  addToCart(quantity: string){
+    this.cartService.add(this.product, +quantity);
   }
 
 }

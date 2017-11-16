@@ -1,0 +1,5 @@
+<div class="container container-cards-pf">
+  <div class="row">
+    <app-product *ngFor='let product of productService.products | async' [product]="product"></app-product>
+  </div>
+</div>

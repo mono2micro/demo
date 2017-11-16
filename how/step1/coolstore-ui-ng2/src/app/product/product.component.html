@@ -10,14 +10,14 @@
       <form class="form-inline">
         <div class="form-group">
           <select #quantity name="quantity" id="quantity" class="form-control">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
           </select>
         </div>
-        <button (click)="addToCart(quantity)" type="submit" class="btn btn-default">Add To Cart</button>
+        <button (click)="addToCart(quantity.value)" type="submit" class="btn btn-default">Add To Cart</button>
       </form>
     </div>
   </div>
