@@ -1,7 +1,7 @@
 ### Sync Repos
 
 ```bash
-git clone https://github.com/redhat-cop/casl-ansible
+git clone https://github.com/mono2micro/casl-ansible
 git clone https://github.com/mono2micro/demo
 ```
 
