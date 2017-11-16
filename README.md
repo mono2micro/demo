@@ -1,7 +1,6 @@
 ### Sync Repos
 
 ```bash
-git clone https://github.com/mono2micro/casl-ansible
 git clone https://github.com/mono2micro/demo
 ```
 
@@ -12,7 +11,7 @@ git clone https://github.com/mono2micro/demo
 
 ```bash
 oc login https://<your_ocp_cluster>/
-ansible-playbook -i demo/inventory casl-ansible/playbooks/openshift-cluster-seed.yml
+ansible-playbook -i demo/inventory demo/playbooks/openshift-cluster-seed.yml
 ```
 
 ### Cleanup (TODO: make better)

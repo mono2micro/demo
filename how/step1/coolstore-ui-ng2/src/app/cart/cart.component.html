@@ -1,0 +1,57 @@
+<div class="row">
+  <!-- cart list -->
+  <div class="col-md-8">
+    <pfng-list [config]="listConfig"
+               [items]="items"
+               [itemTemplate]="itemTemplate"
+               [actionTemplate]="actionTemplate"
+               (onActionSelect)="handleAction($event, null)">
+      <ng-template #itemTemplate let-item="item" let-index="index">
+        <div class="list-pf-description">
+          <div class="media">
+            <div classs="media-left">
+              <img class="media-object" src="/assets/img/{{item.product.name}}.jpg" alt="{{item.product.name}}">
+            </div>
+            <div class="media-body">
+              <h2 class="media-heading">{{item.product.name}}</h2>
+              <div>
+                <span class="label label-default">Quantity {{item.quantity}}</span>
+              </div>
+              <div>{{item.product.desc}}</div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #actionTemplate let-item="item" let-index="index">
+        <button (click)="remove(item.product.itemId)" class="btn btn-default">Remove</button>
+      </ng-template>
+    </pfng-list>
+  </div>
+
+  <!-- cart summary -->
+  <div class="col-md-4">
+    <pfng-card [config]="summaryConfig"
+               [headerTemplate]="summaryHeaderTemplate"
+               [footerTemplate]="summaryFooterTemplate">
+      <ng-template #summaryHeaderTemplate>
+        <h1 class="card-pf-title">
+          Shopping Summary
+        </h1>
+
+      </ng-template>
+      <div class="card-pf-items">
+        <h2>Cart Total:</h2>
+        <h2>Promotional Item Savings:</h2>
+        <h2>Subtotal:</h2>
+        <h2>Shipping:</h2>
+        <h2>Promotional Shipping Savings:</h2>
+        <h1>Total Order Amount:</h1>
+      </div>
+      <ng-template #summaryFooterTemplate>
+        <button class="btn btn-default">Checkout</button>
+        <button class="btn btn-cancel" routerLink="/" routerLinkActive="true">Keep Shopping</button>
+      </ng-template>
+    </pfng-card>
+
+  </div>
+</div>

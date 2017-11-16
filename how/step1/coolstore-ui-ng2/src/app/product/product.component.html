@@ -1,0 +1,25 @@
+<pfng-card [config]="config" class="col-md-4 item">
+  <div class="row">
+    <div class="col-xs-12">
+      <img class="img-responsive img-circle" src="/assets/img/{{product.name}}.jpg">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>{{product.price | currency:'USD':'symbol'}}</h1>
+      <form class="form-inline">
+        <div class="form-group">
+          <select #quantity name="quantity" id="quantity" class="form-control">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </div>
+        <button (click)="addToCart(quantity.value)" type="submit" class="btn btn-default">Add To Cart</button>
+      </form>
+    </div>
+  </div>
+
+</pfng-card>
