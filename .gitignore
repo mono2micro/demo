@@ -1,0 +1,5 @@
+*.retry
+*.swp
+roles/infra-ansible
+roles/openshift-ansible-contrib
+*.pyc
