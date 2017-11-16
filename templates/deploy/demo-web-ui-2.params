@@ -1,0 +1,3 @@
+NAMESPACE=coolstore-micro-demo
+NAMESPACE_BUILD=coolstore-micro-pipeline
+APPLICATION_NAME=web-ui-2
