@@ -7,21 +7,17 @@ openshift_cluster_content:
     template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
     params: "{{ inventory_dir }}/../templates/projectrequest/pipeline.params"
     template_action: create
-  - name: "coolstore-mono"
-    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
-    params: "{{ inventory_dir }}/../templates/projectrequest/mono.params"
-    template_action: create
+ # - name: "coolstore-mono"
+ #   template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+ #   params: "{{ inventory_dir }}/../templates/projectrequest/mono.params"
+ #/   template_action: create
   - name: "coolstore-micro-dev"
     template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
     params: "{{ inventory_dir }}/../templates/projectrequest/dev.params"
     template_action: create
-  - name: "infographic-micro-uat"
+  - name: "infographic-micro-demo"
     template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
-    params: "{{ inventory_dir }}/../templates/projectrequest/uat.params"
-    template_action: create
-  - name: "infographic-micro-test"
-    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
-    params: "{{ inventory_dir }}/../templates/projectrequest/test.params"
+    params: "{{ inventory_dir }}/../templates/projectrequest/demo.params"
     template_action: create
 - object: rolebindings
   content:
@@ -29,46 +25,38 @@ openshift_cluster_content:
     file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
     file_action: apply
     namespace: coolstore-micro-pipeline
-  - name: "coolstore-mono-rolebindings"
-    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
-    file_action: apply
-    namespace: coolstore-mono
+#  - name: "coolstore-mono-rolebindings"
+#    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
+#    file_action: apply
+#    namespace: coolstore-mono
   - name: "coolstore-micro-dev-rolebindings"
     file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
     file_action: apply
     namespace: coolstore-micro-dev
-  - name: "coolstore-micro-uat-rolebindings"
+  - name: "coolstore-micro-demo-rolebindings"
     file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
     file_action: apply
-    namespace: coolstore-micro-uat
-  - name: "coolstore-micro-test-rolebindings"
-    file: "{{ inventory_dir }}/../templates/projectrequest/rolebindings.yml"
-    file_action: apply
-    namespace: coolstore-micro-test
-#- object: builds
-#  content:
-#  - name: "coolstore-micro-pipeline"
-#    template: "{{ inventory_dir }}/../templates/build/template-pipeline.yml"
-#    params: "{{ inventory_dir }}/../templates/build/pipeline.params"
-#    namespace: "coolstore-micro-pipeline"
-#  - name: "coolstore-micro-build"
-#    template: "{{ inventory_dir }}/../templates/build/template-build.yml"
-#    params: "{{ inventory_dir }}/../templates/build/build.params"
-#    namespace: "coolstore-micro-pipeline"
-#- object: deployments
-#  content:
-#  - name: "coolstore-micro-dev"
-#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
-#    params: "{{ inventory_dir }}/../templates/deploy/dev.params"
-#    namespace: "coolstore-micro-dev"
-#  - name: "infographic-uat"
-#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
-#    params: "{{ inventory_dir }}/../templates/deploy/uat.params"
-#    namespace: "infographic-uat"
-#  - name: "infographic-test"
-#    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
-#    params: "{{ inventory_dir }}/../templates/deploy/test.params"
-#    namespace: "infographic-test"
+    namespace: coolstore-micro-demo
+- object: builds
+  content:
+  - name: "coolstore-micro-web-ui-pipeline"
+    template: "{{ inventory_dir }}/../templates/build/template-pipeline.yml"
+    params: "{{ inventory_dir }}/../templates/build/pipeline.params"
+    namespace: "coolstore-micro-pipeline"
+  - name: "coolstore-micro-web-ui-build"
+    template: "{{ inventory_dir }}/../templates/build/template-web-ui-build.yml"
+    params: "{{ inventory_dir }}/../templates/build/web-ui-build.params"
+    namespace: "coolstore-micro-pipeline"
+- object: deployments
+  content:
+  - name: "coolstore-micro-web-ui-dev"
+    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
+    params: "{{ inventory_dir }}/../templates/deploy/dev.params"
+    namespace: "coolstore-micro-dev"
+  - name: "coolstore-micro-web-ui-demo"
+    template: "{{ inventory_dir }}/../templates/deploy/template.yml"
+    params: "{{ inventory_dir }}/../templates/deploy/demo.params"
+    namespace: "coolstore-micro-demo"
 - object: demo
   content:
   - name: coolstore-micro-dev
@@ -77,13 +65,7 @@ openshift_cluster_content:
     namespace: "coolstore-micro-dev"
 - object: demo
   content:
-  - name: coolstore-micro-test
+  - name: coolstore-micro-demo
     template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
     params: "{{ inventory_dir }}/../templates/emptyparams"
-    namespace: "coolstore-micro-test"
-- object: demo
-  content:
-  - name: coolstore-micro-uat
-    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
-    params: "{{ inventory_dir }}/../templates/emptyparams"
-    namespace: "coolstore-micro-uat"
+    namespace: "coolstore-micro-demo"

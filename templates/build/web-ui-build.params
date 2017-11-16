@@ -1,8 +1,10 @@
 NAMESPACE=coolstore-micro-pipeline
-NAMESPACE_DEV=coolstore-micro-dev
-NAMESPACE_DEMO=coolstore-micro-demo
-APPLICATION_NAME=coolstore-ui
+BUILDER_NAME=nodejs
+BUILDER_IMAGE_TAG='4'
+BUILDER_NAMESPACE=openshift
+APPLICATION_NAME=web-ui
 APPLICATION_SOURCE_REPOSITORY_URL=https://github.com/mono2micro/coolstore-micro.git
 APPLICATION_SOURCE_REPOSITORY_REF=1.1.x
 APPLICATION_CONTEXT_DIR=coolstore-ui
-GITHUB_WEBHOOK_SECRET=`
+#NPM_MIRROR=
+#BOWER_MIRROR=
