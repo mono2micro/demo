@@ -1,0 +1,10 @@
+---
+- hosts: seed-hosts[0]
+  roles:
+    - openshift-defaults
+    - openshift-applier
+
+  tasks: 
+    - include_role:
+        name: openshift-login
+      when: openshift_login_url is defined
