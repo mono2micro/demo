@@ -48,12 +48,12 @@ openshift_cluster_content:
     params: "../templates/build/web-ui-build.params"
     namespace: "coolstore-micro-pipeline"
   - name: "coolstore-micro-web-ui-2-pipeline"
-    template: "{{ inventory_dir }}/../templates/build/template-pipeline.yml"
-    params: "{{ inventory_dir }}/../templates/build/pipeline-web-ui-2.params"
+    template: "../templates/build/template-pipeline.yml"
+    params: "../templates/build/pipeline-web-ui-2.params"
     namespace: "coolstore-micro-pipeline"
   - name: "coolstore-micro-web-ui-2-build"
-    template: "{{ inventory_dir }}/../templates/build/template-web-ui-build.yml"
-    params: "{{ inventory_dir }}/../templates/build/web-ui-2-build.params"
+    template: "../templates/build/template-web-ui-build.yml"
+    params: "../templates/build/web-ui-2-build.params"
     namespace: "coolstore-micro-pipeline"
 - object: deployments
   content:
