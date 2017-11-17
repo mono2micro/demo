@@ -37,6 +37,18 @@ openshift_cluster_content:
     file: "../templates/projectrequest/rolebindings.yml"
     file_action: apply
     namespace: coolstore-micro-demo
+- object: demo
+  content:
+  - name: coolstore-micro-dev
+    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
+    params: "../templates/emptyparams"
+    namespace: "coolstore-micro-dev"
+- object: demo
+  content:
+  - name: coolstore-micro-demo
+    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
+    params: "../templates/emptyparams"
+    namespace: "coolstore-micro-demo"
 - object: builds
   content:
   - name: "coolstore-micro-web-ui-pipeline"
@@ -72,16 +84,4 @@ openshift_cluster_content:
   - name: "coolstore-micro-web-ui-2-demo"
     template: "../templates/deploy/template.yml"
     params: "../templates/deploy/demo-web-ui-2.params"
-    namespace: "coolstore-micro-demo"
-- object: demo
-  content:
-  - name: coolstore-micro-dev
-    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
-    params: "../templates/emptyparams"
-    namespace: "coolstore-micro-dev"
-- object: demo
-  content:
-  - name: coolstore-micro-demo
-    template: "https://raw.githubusercontent.com/mono2micro/coolstore-micro/1.1.x/openshift/coolstore-template.yaml"
-    params: "../templates/emptyparams"
     namespace: "coolstore-micro-demo"
