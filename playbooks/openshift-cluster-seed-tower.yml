@@ -1,4 +1,6 @@
 ---
 - hosts: seed-hosts[0]
   roles:
+    - openshift-defaults
+    - openshift-login
     - openshift-applier
